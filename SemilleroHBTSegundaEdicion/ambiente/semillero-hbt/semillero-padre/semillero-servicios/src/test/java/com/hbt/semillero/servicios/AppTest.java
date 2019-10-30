@@ -1,4 +1,4 @@
-package com.hbt.semillero.servicios;
+﻿package com.hbt.semillero.servicios;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -137,6 +137,7 @@ public class AppTest {
 	// TODO
 	/**
 	 * pendiente hacer un metodo que use el tostring de la entidad comic
+         *
 	 */
 	
 }
