@@ -3,6 +3,9 @@
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import com.hbt.semillero.entidades.Comic;
+import com.hbt.semillero.entidades.EstadoEnum;
+
 public class AppTest {
 
 	public void shouldAnswerWithTrue() {
@@ -134,10 +137,85 @@ public class AppTest {
 		Assert.assertEquals(resultadoReal, cadenaEsperada);
 	}
 	
-	// TODO
+	
 	/**
-	 * pendiente hacer un metodo que use el tostring de la entidad comic
-         *
+	 *     EJERCICIOS SEGUNDA SESSION 
 	 */
 	
+	/**
+	 * 
+	 * prueba toString clase comic
+	 * @author Gustavo Andres Arias
+	 *
+	 */
+	@Test
+	public void pruebaToString() {
+		Comic c =  new Comic();
+		Assert.assertNotNull(c.toString());
+	}
+	
+	/**
+	 * 
+	 * Metodo encargado de Instanciar un enum de la clase EstadoEnum
+	 * <b></b>
+	 * @author Gustavo Andres Arias
+	 *
+	 */
+	@Test
+	public void pruebaInstanciarEnum() {
+		EstadoEnum estado = EstadoEnum.ACTIVO;
+		Assert.assertEquals(estado,EstadoEnum.ACTIVO);
+	}
+	
+
+	/**
+	 * 
+	 * Metodo encargado de devolver un string con el nombre de la constante (ACTIVO)
+	 * @author Gustavo Andres Arias
+	 *
+	 */
+	@Test
+	public void pruebaNombreEnum() {
+		EstadoEnum estado = EstadoEnum.ACTIVO;
+		String nombreEstado = estado.name();
+		Assert.assertEquals(nombreEstado,EstadoEnum.ACTIVO.name());
+	}
+	
+	/**
+	 * 
+	 * Metodo encargado de Devolver un entero con la posición del enum según está declarada
+	 * @author Gustavo Andres Arias
+	 *
+	 */
+	@Test
+	public void invertirCadenaPU9() {
+		EstadoEnum estado = EstadoEnum.ACTIVO;
+		int posicion = estado.ordinal();
+		Assert.assertEquals(posicion,EstadoEnum.ACTIVO.ordinal());
+	}
+	
+	/**
+	 * 
+	 * Comparar el enum con el parámetro según el orden en el que están declarados lo enum
+	 * @author Gustavo Andres Arias
+	 *
+	 */
+	@Test
+	public void pruebaCompararParametroEnum() {
+		EstadoEnum estado = EstadoEnum.ACTIVO;
+		Assert.assertTrue(estado.equals(EstadoEnum.ACTIVO));
+		Assert.assertFalse(estado.equals(EstadoEnum.INACTIVO));
+	}
+	
+	/**
+	 * 
+	 * Devolver un array que contiene todos los enum
+	 * @author Gustavo Andres Arias
+	 *
+	 */
+	@Test
+	public void pruebaArrayEnum() {
+		EstadoEnum estado = EstadoEnum.ACTIVO;
+		Assert.assertEquals(estado.values(),EstadoEnum.values());
+	}
 }
