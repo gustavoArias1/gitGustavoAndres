@@ -1,0 +1,7 @@
+<p>{{mostrarLista()}}</p>
+<button type="button" class="btn btn-primary" (click)='eliminarComic("3")'>eliminarComic</button>
+<div *ngIf="comicEliminado.length>1">se elimino: {{comicEliminado}} </div>
+<div *ngIf="(comicEliminado==' ' )" >el comic  no existe  o ya fue eliminado</div>
+<ul *ngFor="let item of listaComic">
+    <li>{{convertirString(item)}}</li>
+</ul>

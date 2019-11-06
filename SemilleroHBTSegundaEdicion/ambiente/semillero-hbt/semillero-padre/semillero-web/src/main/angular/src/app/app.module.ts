@@ -12,10 +12,12 @@ import { MenuComponent } from './semillero/componentes/menu/menu-component';
 import { BienvenidaComponent } from './semillero/componentes/home/bienvenida-component';
 import {CrearPersonaComponent} from './semillero/componentes/crearPersona/crear-persona-component';
 import {infoPersonalComponent} from './semillero/componentes/infoPersonal/info-personal-component';
+import {TrabajoComicComponent} from './semillero/componentes/trabajoComics/trabajo-comic-component';
 
 // DTOs
 export { ComicDTO } from './semillero/dto/comic.dto';
 export { ResultadoDTO } from './semillero/dto/resultado.dto';
+export { EjercicioComic } from './semillero/componentes/trabajoComics/Comic';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ export { ResultadoDTO } from './semillero/dto/resultado.dto';
     BienvenidaComponent,
     GestionarComicComponent,
     CrearPersonaComponent,
-    infoPersonalComponent
+    infoPersonalComponent,
+    TrabajoComicComponent
   ],
   imports: [
     BrowserModule,
