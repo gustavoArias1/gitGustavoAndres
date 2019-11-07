@@ -16,9 +16,9 @@ import com.hbt.semillero.dto.ComicDTO;
 import com.hbt.semillero.entidades.Comic;
 
 /**
- * <b>Descripción:<b> Clase que determina
+ * < Clase que gestiona un comic en la base de datos 
  * <b>Caso de Uso:<b> 
- * @author mr-robot
+ * @author Gustavo Andres Arias
  * @version 
  */
 @Stateless
@@ -26,14 +26,10 @@ public class GestionarComicBean  implements IGestionarComicLocal{
 	@PersistenceContext
     private EntityManager em;
 	
-	//TODO
-	/**
-	 * 
-	 *agregar interfaz
-	 */
+	
 	
 	/**
-	 * 
+	 * metodo encargdo de agregar un comic a la base de datos
 	 * @see com.hbt.semillero.ejb.IGestionarComicLocal#crearComic(com.hbt.semillero.dto.ComicDTO)
 	 */
 	@TransactionAttribute(TransactionAttributeType.REQUIRES_NEW)
@@ -71,6 +67,7 @@ public class GestionarComicBean  implements IGestionarComicLocal{
 	}
 
 	/** 
+	 * metodo encargado de modificar los datos de un comic en la base de datos
 	 * @see com.hbt.semillero.ejb.IGestionarComicLocal#modificarComic(java.lang.Long, java.lang.String, com.hbt.semillero.dto.ComicDTO)
 	 */
 	@Override
@@ -89,15 +86,23 @@ public class GestionarComicBean  implements IGestionarComicLocal{
 	}
 
 	/** 
+	 * metodo encargado de eliminar un comic de la base de datos
 	 * @see com.hbt.semillero.ejb.IGestionarComicLocal#eliminarComic(java.lang.Long)
 	 */
 	@Override
+	@TransactionAttribute(TransactionAttributeType.REQUIRED)
 	public void eliminarComic(Long idComic) {
+		Comic comicEliminar;
+		comicEliminar = em.find(Comic.class, idComic);
 		
+		if (comicEliminar!=null) {
+			em.remove(comicEliminar);
+		}
 		
 	}
 
 	/** 
+	 * metodo encargado de consultar la lista de comics guardados
 	 * @see com.hbt.semillero.ejb.IGestionarComicLocal#consultarComics()
 	 */
 	@Override
@@ -111,6 +116,15 @@ public class GestionarComicBean  implements IGestionarComicLocal{
 		}
 		return resultadosComicDTO;
 	}
+	
+	/**
+	 * 
+	 * Metodo encargado de convertir un comicDTO a comic
+	 * @author Gustavo Andres Arias
+	 * 
+	 * @param comic
+	 * @return
+	 */
 	
 	private Comic convertirComicDTOToComic(ComicDTO comicDTO) {
 		Comic comic = new Comic();
@@ -131,6 +145,15 @@ public class GestionarComicBean  implements IGestionarComicLocal{
         return comic;
 	}
 	
+	
+	/**
+	 * 
+	 * Metodo encargado de convertir un comic a comicDTO
+	 * @author Gustavo Andres Arias
+	 * 
+	 * @param comic
+	 * @return
+	 */
 	private ComicDTO convertirComicToComicDTO(Comic comic) {
         ComicDTO comicDTO = new ComicDTO();
         if(comic.getId()!=null) {

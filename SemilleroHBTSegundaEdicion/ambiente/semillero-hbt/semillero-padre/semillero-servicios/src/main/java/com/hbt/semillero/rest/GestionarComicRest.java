@@ -38,6 +38,7 @@ public class GestionarComicRest {
 		if(idComic!=null) {
 			return gestionarComicEJB.consultarComic(idComic.toString());
 		}
+		
 		return null;
 	}
 }
