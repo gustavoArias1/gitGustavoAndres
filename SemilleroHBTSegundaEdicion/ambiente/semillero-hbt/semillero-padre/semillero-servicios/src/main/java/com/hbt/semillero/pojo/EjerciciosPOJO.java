@@ -183,5 +183,39 @@ public class EjerciciosPOJO {
 	}
 	
 	
+	/**
+	 * 
+	 * Metodo encargado de 
+	 * <b>Caso de Uso</b>
+	 * @author mr-robot
+	 * 
+	 * @param numero1
+	 * @param numero2
+	 * @return
+	 */
+	
+	public String secuencia(int numero1, int numero2) {
+		
+		String cadena1 = numero1+"";
+		String cadena2 = numero2+"";
+		
+		int resultado = cadena2.charAt(0)+cadena2.charAt(1);
+		int suma=resultado+1;
+		String siguiente = "";
+		
+		for (int i = 0; i < 9; i++) {
+			for (int j = 0; j < 9; j++) {
+				if (i+j==suma) {
+					siguiente=i+j+"";
+				}
+			}
+	
+		}
+		
+		
+		return siguiente;
+	}
+	
+	
 
 }
