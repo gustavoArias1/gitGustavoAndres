@@ -164,9 +164,22 @@ public class EjeciciosTest {
 		
 	}
 	
+	/**
+	 * 
+	 * Metodo encargado de 
+	 * <b>Caso de Uso</b>
+	 * @author mr-robot
+	 *
+	 */
 	
 	@Test
-	public void ejercicio9() {
+	public void ejercicio11() {
+		 EjerciciosPOJO ejerciciosPojo = new EjerciciosPOJO();
+		 int numero1 = 80;
+		 int numero2 =36;
+		 Assert.assertEquals("46", ejerciciosPojo.secuencia(numero1, numero2));
+		 
+		
 		
 	}
 	
