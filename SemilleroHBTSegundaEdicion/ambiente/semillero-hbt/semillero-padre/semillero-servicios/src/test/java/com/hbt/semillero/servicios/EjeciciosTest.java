@@ -89,6 +89,30 @@ public class EjeciciosTest {
 	}
 	
 	
+	/**
+	 * 
+	 * Metodo encargado de  coprobar si un vector esta lleno y ordenado
+	 * <b>Caso de Uso</b>
+	 * @author mr-robot
+	 *
+	 */
+	
+	@Test 
+	public void ejercicio5() {
+		
+	 int primeraPosicion=-2;
+	 int ultimaPosicion = 249;
+	 EjerciciosPOJO ej = new EjerciciosPOJO();
+	 int [] arreglo = ej.llenar();
+	 
+	 Assert.assertEquals(primeraPosicion,arreglo[0] );	
+	 Assert.assertEquals(ultimaPosicion,arreglo[arreglo.length-1] );	
+		
+		
+	}
+	
+	
+	
 	
 
 }
