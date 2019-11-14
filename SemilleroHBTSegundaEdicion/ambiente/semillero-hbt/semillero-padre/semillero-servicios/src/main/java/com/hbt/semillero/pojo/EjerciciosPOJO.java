@@ -92,6 +92,40 @@ public class EjerciciosPOJO {
 		return arreglo;
 	
 	}
+	
+	
+	/**
+	 * 
+	 * Metodo encargado de  derterminar quien es el ganador en un partido de tennis
+	 * <b>Caso de Uso</b>
+	 * @author Gutavo andres arias
+	 * 
+	 * @param jugador1
+	 * @param jugador2
+	 * @return
+	 */
+	
+	public String Ganador(int [] jugador1, int [] jugador2 ) {
+		int puntajeJugador1=0;
+		int puntajeJugador2=0;
+		String ganador="";
+		
+		for (int i = 0; i < jugador2.length; i++) {
+			if (jugador1[i]>jugador2[i]) {
+				puntajeJugador1++;
+			}else {
+				puntajeJugador2++;
+			}
+		}
+		
+		if (puntajeJugador1>puntajeJugador2) {
+			ganador="jugador1";
+		}else {
+			ganador="jugador2";
+		}
+		
+		return ganador;
+	}
 		
 
 }

@@ -112,6 +112,25 @@ public class EjeciciosTest {
 	}
 	
 	
+	/**
+	 * 
+	 * Metodo encargado de probar el metodo de ganar en tennis
+	 * <b>Caso de Uso</b>
+	 * @author Gustavo  andres arias
+	 *
+	 */
+	
+	public void ejercicio7() {
+		
+		 EjerciciosPOJO ejerciciosPojo = new EjerciciosPOJO();
+		 int [] jugador1= {6,3,6};
+		 int [] jugador2= {4,6,1};
+		
+		 Assert.assertEquals("jugador1", ejerciciosPojo.Ganador(jugador1, jugador2));
+		
+	}
+	
+	
 	
 	
 
