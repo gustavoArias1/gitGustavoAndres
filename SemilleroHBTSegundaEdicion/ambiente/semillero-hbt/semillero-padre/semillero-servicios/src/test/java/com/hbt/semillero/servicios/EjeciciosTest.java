@@ -102,12 +102,12 @@ public class EjeciciosTest {
 	public void ejercicio3() {
 		
 		boolean numeroUno = true; // 5
-		boolean numerodos = false; // 222
+		boolean numeroDos = false; // 222
 		boolean numeroTres= false; // 0
 		
 		Assert.assertEquals(numeroUno, esPrimo(5));
-		Assert.assertEquals(numeroUno, esPrimo(222));
-		Assert.assertEquals(numeroUno, esPrimo(0));
+		Assert.assertEquals(numeroDos, esPrimo(222));
+		Assert.assertEquals(numeroTres, esPrimo(0));
 		
 		
 	}
