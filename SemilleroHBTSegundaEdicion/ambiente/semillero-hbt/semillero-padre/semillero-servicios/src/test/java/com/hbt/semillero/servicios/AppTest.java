@@ -234,6 +234,14 @@ public class AppTest {
 		Assert.assertTrue(!gestionarComicPOJO.getListaComics().isEmpty());
 	}
 
+	
+	/**
+	 * 
+	 * Metodo encargado de 
+	 * <b>Caso de Uso</b>
+	 * @author mr-robot
+	 *
+	 
 	@Test (enabled = false)
 	public void creartComicDTOTest() {
 		GestionarComicPOJO gestionarComicPOJO = new GestionarComicPOJO();
@@ -253,7 +261,7 @@ public class AppTest {
 		comicDTO.setId("100");
 		comicDTO.setNombre("Dragon ball Yamcha");
 		comicDTO.setEditorial("Planeta Cómic");
-		comicDTO.setTematica(TematicaEnum.AVENTURAS.name());
+		comicDTO.setTematica(TematicaEnum.AVENTURAS);
 		comicDTO.setColeccion("Manga Shonen");
 		comicDTO.setNumeroPaginas(100);
 		comicDTO.setPrecio(new BigDecimal(2100));
@@ -286,5 +294,7 @@ public class AppTest {
 
 		Assert.assertTrue(gestionarComicPOJO.getListaComics().size() == 3);
 	}
+	
+	*/
 	
 }
