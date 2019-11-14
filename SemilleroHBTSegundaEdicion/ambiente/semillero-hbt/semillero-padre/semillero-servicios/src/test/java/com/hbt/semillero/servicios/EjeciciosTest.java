@@ -3,6 +3,8 @@
  */
 package com.hbt.semillero.servicios;
 
+import java.util.LinkedList;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -127,6 +129,41 @@ public class EjeciciosTest {
 		 int [] jugador2= {4,6,1};
 		
 		 Assert.assertEquals("jugador1", ejerciciosPojo.Ganador(jugador1, jugador2));
+		
+	}
+	
+	
+	/**
+	 * 
+	 * Metodo encargado de  probar el cambio de monedas
+	 * <b>Caso de Uso</b>
+	 * @author gustavo andres arias
+	 *
+	 */
+	
+	@Test
+	public void ejercicio8() {
+		
+		 EjerciciosPOJO ejerciciosPojo = new EjerciciosPOJO();
+		 LinkedList<Integer> devuelta1 = new LinkedList<Integer>();
+		 devuelta1.add(1000);
+		 LinkedList<Integer> devuelta2 = new LinkedList<Integer>();
+		 devuelta2.add(1000);
+		 devuelta2.add(1000);
+		 devuelta2.add(1000);
+		 devuelta2.add(1000);
+		 devuelta2.add(1000);
+		 devuelta2.add(500);
+		 devuelta2.add(50);
+		 
+		
+		 Assert.assertEquals(devuelta1, ejerciciosPojo.cambio(1000));
+		 Assert.assertEquals(devuelta2, ejerciciosPojo.cambio(5550));
+			
+			
+		 
+		 
+		
 		
 	}
 	

@@ -4,6 +4,7 @@
 package com.hbt.semillero.pojo;
 
 import java.time.LocalDate;
+import java.util.LinkedList;
 
 import javax.ejb.Local;
 import javax.swing.JOptionPane;
@@ -127,5 +128,41 @@ public class EjerciciosPOJO {
 		return ganador;
 	}
 		
+	
+	
+	/**
+	 * 
+	 * Metodo encargado de devolver una cantidad de monedas
+	 * <b>Caso de Uso</b>
+	 * @author gustavo andres arias
+	 * 
+	 * @param monto
+	 * @return
+	 */
+	
+	public LinkedList<Integer> cambio(int monto) {
+		
+		LinkedList<Integer> cambio = new LinkedList<Integer>();
+		LinkedList<Integer> posibliliadescambio = new LinkedList<Integer>();
+		posibliliadescambio.add(1000);
+		posibliliadescambio.add(500);
+		posibliliadescambio.add(200);
+		posibliliadescambio.add(100);
+		posibliliadescambio.add(50);
+		
+		Integer i =0;
+		
+		
+		while (monto>0 && i<posibliliadescambio.size()) {
+			if (monto % posibliliadescambio.get(i)==0) {
+				cambio.add(posibliliadescambio.get(i));
+			}
+			monto = monto - (monto/posibliliadescambio.get(i));
+			i++;
+			
+		}
+		
+		return cambio;
+	}
 
 }
