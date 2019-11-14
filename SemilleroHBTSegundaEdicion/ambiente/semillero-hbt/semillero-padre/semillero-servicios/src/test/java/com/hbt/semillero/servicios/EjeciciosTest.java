@@ -161,14 +161,14 @@ public class EjeciciosTest {
 		 Assert.assertEquals(devuelta2, ejerciciosPojo.cambio(5550));
 			
 			
-		 
-		 
-		
 		
 	}
 	
 	
-	
+	@Test
+	public void ejercicio9() {
+		
+	}
 	
 
 }

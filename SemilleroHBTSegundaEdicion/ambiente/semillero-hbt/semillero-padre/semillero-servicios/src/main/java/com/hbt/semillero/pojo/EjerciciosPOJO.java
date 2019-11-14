@@ -164,5 +164,24 @@ public class EjerciciosPOJO {
 		
 		return cambio;
 	}
+	
+	/**
+	 * 
+	 * Metodo encargado de mostrar una excepcion
+	 * <b>Caso de Uso</b>
+	 * @author Gustavo andres arias
+	 * 
+	 * @throws Exception
+	 */
+	
+	
+	// b y d
+	public void ejercicio9()throws Exception {
+		
+		throw new Exception();
+		
+	}
+	
+	
 
 }
