@@ -6,6 +6,8 @@ package com.hbt.semillero.servicios;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import com.hbt.semillero.pojo.EjerciciosPOJO;
+
 /**
  * <b>Descripción:<b> Clase que determina
  * <b>Caso de Uso:<b> 
@@ -13,53 +15,7 @@ import org.testng.annotations.Test;
  * @version 
  */
 public class EjeciciosTest {
-	
-	@Test 
-	public void ejercicio1() {
-		int A$B = 1;
-		Assert.assertEquals(1, A$B);
 		
-		int _helloWord=1;
-		Assert.assertEquals(1, _helloWord);
-		
-		int true=1;
-		Assert.assertEquals(1, true);
-		
-		int java.lang=1;
-		Assert.assertEquals(1, javalang);
-		
-		int public =1;
-		Assert.assertEquals(1, public);
-		
-		int 1980_s=1;
-		Assert.assertEquals(1, 1980_2);
-		
-		
-		
-	}
-	
-	
-	public static void ejercicioIni() {
-
-		 
-		final String brand;
-
-		final boolean empty;
-		
-		System.out.print("Empty = " + empty);
-
-		System.out.print(", Brand = " + brand);
-
-		}
-	
-	public static void ejercicio2() {
-	
-
-		 
-			
-	}
-	
-	
 	
 	/**
 	 * 
@@ -108,6 +64,26 @@ public class EjeciciosTest {
 		Assert.assertEquals(numeroUno, esPrimo(5));
 		Assert.assertEquals(numeroDos, esPrimo(222));
 		Assert.assertEquals(numeroTres, esPrimo(0));
+		
+		
+	}
+	
+	/**
+	 * 
+	 * Metodo encargado de evaluar la suma de las edades 
+	 * <b>Caso de Uso</b>
+	 * @author mr-robot
+	 *
+	 */
+	
+	@Test 
+	public void ejercicio4() {
+		
+		boolean esIgual=true;
+		EjerciciosPOJO ej = new EjerciciosPOJO();
+		
+		Assert.assertEquals(esIgual, ej.fecha(25));
+		
 		
 		
 	}
