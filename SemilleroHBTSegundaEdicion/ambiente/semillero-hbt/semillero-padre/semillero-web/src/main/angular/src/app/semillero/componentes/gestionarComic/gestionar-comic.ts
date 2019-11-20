@@ -1,9 +1,10 @@
 
+
 import { ComicDTO } from '../../dto/comic.dto';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-
+import { GestionarComicService } from '../../services/gestionar.comic.service';
 /**
  * @description Componenete gestionar comic, el cual contiene la logica CRUD
  * 
@@ -62,7 +63,8 @@ export class GestionarComicComponent implements OnInit {
      * @author Diego Fernando Alvarez Silva <dalvarez@heinsohn.com.co>
      */
     constructor(private fb : FormBuilder,
-        private router : Router) {
+        private router : Router,
+        private gestionarComicService : GestionarComicService) {
         this.gestionarComicForm = this.fb.group({
             nombre : [null, Validators.required],
             editorial : [null],
@@ -83,6 +85,19 @@ export class GestionarComicComponent implements OnInit {
         console.log("Ingreso al al evento oninit");
         this.comic = new ComicDTO();
         this.listaComics = new Array<ComicDTO>();
+        this.consultarComics2();
+    }
+
+     /**
+     * @description Metodo encargado de consultar los comics existentes
+     * @author Diego Fernando Alvarez Silva <dalvarez@heinsohn.com.co>
+     */
+    public consultarComics2() : void {
+        this.gestionarComicService.consultarComics().subscribe(listaComics => {
+            this.listaComics = listaComics;
+        }, error => {
+            console.log(error);
+        });
     }
 
     /**
@@ -184,9 +199,18 @@ export class GestionarComicComponent implements OnInit {
      */
     public eliminarComic(posicion : number):void{
         this.comicEliminar=this.listaComics[posicion];
-        this.listaComics.splice(posicion,1);
+        //this.listaComics.splice(posicion,1);
         this.comicEliminado=true;
-        alert("el comic "+ this.comicEliminar.nombre+" fue eliminado con exito");
+        //alert("el comic "+ this.comicEliminar.nombre+" fue eliminado con exito");
+        this.eliminarComic2();
+    }
+
+    public eliminarComic2() : void {
+        this.gestionarComicService.eliminarComic(this.comicEliminar).subscribe(listaComics => {
+            console.log("no paso nada");
+        }, error => {
+            console.log(error);
+        });
     }
 
 

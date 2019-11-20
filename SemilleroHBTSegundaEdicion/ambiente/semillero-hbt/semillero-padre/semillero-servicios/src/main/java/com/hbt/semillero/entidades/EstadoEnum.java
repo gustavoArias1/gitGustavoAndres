@@ -2,7 +2,7 @@ package com.hbt.semillero.entidades;
 
 /**
  * 
- * <b>EstadoEnum:<b> enum con dos valores de instancia para el parametro estado
+ *  enum con dos valores de instancia para el parametro estado
  * 
  * @author Gustavo Andres Arias
  * @version
